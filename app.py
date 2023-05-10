@@ -52,6 +52,7 @@ def run_pipeline(user_input: str) -> None:
 
 
 if __name__ == '__main__':
+      st.write('Text-To-Image Storyteller Application')
       user_input = st.text_area('Enter text to storytell')
       if st.button("Tell the Story!"):
             if user_input:
