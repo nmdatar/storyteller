@@ -17,7 +17,7 @@ def extract_keywords(text: str) -> list:
       return keywords
 
 def generate_image(prompt: str):
-      openai.api_key = os.getenv('OPENAI_API_KEY')
+      openai.api_key = os.environ['OPENAI_API_KEY']
       response = openai.Image.create(
             prompt=prompt, 
             n=1,
