@@ -23,6 +23,7 @@ def generate_image(prompt: str):
             n=1,
             size='256x256',
             response_format='b64_json'
+            image_type='png'
       )
       
       data = b64decode(response['data'][0]['b64_json'])
