@@ -23,7 +23,6 @@ def generate_image(prompt: str):
             n=1,
             size='256x256',
             response_format='b64_json',
-            image_type='png'
       )
       
       data = b64decode(response['data'][0]['b64_json'])
@@ -44,7 +43,12 @@ def download_image(image_data) -> None:
 
 def run_pipeline(user_input: str) -> None:
       keywords = extract_keywords(text=user_input)
-      keywords = ", ".join(keywords)
+
+      # check if prompt is long enough to have extracted keywords
+      if keywords:
+            keywords = ", ".join(keywords)
+      else: 
+            keywords = user_input
 
       image_data = generate_image(prompt=keywords)
       display_image(image_data=image_data)
