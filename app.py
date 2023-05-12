@@ -22,7 +22,7 @@ def generate_image(prompt: str):
             prompt=prompt, 
             n=1,
             size='256x256',
-            response_format='b64_json'
+            response_format='b64_json',
             image_type='png'
       )
       
